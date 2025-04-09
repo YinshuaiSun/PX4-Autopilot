@@ -161,11 +161,16 @@
 #define HRT_TIMER               8  /* use timer8 for the HRT */
 #define HRT_TIMER_CHANNEL       3  /* use capture/compare channel 3 */
 
-// TODO
-/* PWM input driver. Use FMU AUX5 pins attached to timer4 channel 3 */
-//#define PWMIN_TIMER                       4
-//#define PWMIN_TIMER_CHANNEL    /* T4C3 */ 3
-//#define GPIO_PWM_IN            /* PD14 */ GPIO_TIM4_CH3IN_2
+/* PWM input driver */
+//#define PWMIN_TIMER                       8
+//#define PWMIN_TIMER_CHANNEL    /* TIM8CH2 */ 2
+//#define GPIO_PWM_IN            /* PC7 */ GPIO_TIM8_CH2IN_1
+
+#define HRT_PPM_CHANNEL         /* TIM8CH2 */  2  /* use capture/compare channel 2 */
+#define GPIO_PPM_IN             /* PC7 */ GPIO_TIM8_CH2IN_1
+
+#define RC_SERIAL_PORT                     "/dev/ttyS4" // USART6
+//#define RC_SERIAL_SINGLEWIRE
 
 #define SDIO_SLOTNO                    0  /* Only one slot */
 #define SDIO_MINOR                     0
@@ -212,6 +217,7 @@
 		GPIO_CAN1_RX,                     \
 		GPIO_VDD_3V3_SENSORS_EN,          \
 		GPIO_TONE_ALARM_IDLE,             \
+		GPIO_PPM_IN,                      \
 	}
 
 #define BOARD_ENABLE_CONSOLE_BUFFER
