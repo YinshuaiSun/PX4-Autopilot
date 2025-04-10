@@ -170,7 +170,7 @@
 #define GPIO_PPM_IN             /* PC7 */ GPIO_TIM8_CH2IN_1
 
 #define RC_SERIAL_PORT                     "/dev/ttyS4" // USART6
-//#define RC_SERIAL_SINGLEWIRE
+#define RC_SERIAL_PORT_SHARED_PPM_PIN_GPIO_RX             GPIO_USART6_RX
 
 #define SDIO_SLOTNO                    0  /* Only one slot */
 #define SDIO_MINOR                     0
@@ -193,7 +193,6 @@
  */
 #define BOARD_ADC_USB_CONNECTED (px4_arch_gpioread(GPIO_OTGFS_VBUS))
 
-/* FMUv6C never powers off the Servo rail */
 
 #define BOARD_ADC_SERVO_VALID     (1)
 
